@@ -14,17 +14,20 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
-    - name: Setup Node.js
+    - name: Setup Node.js with pnpm
       uses: actions/setup-node@v4
       with:
         node-version: '18'
-        cache: 'npm'
+        cache: 'pnpm'
+
+    - name: Install pnpm
+      run: npm install -g pnpm
 
     - name: Install dependencies
-      run: npm install
+      run: pnpm install
 
     - name: Build project
-      run: npm run build
+      run: pnpm run build
 
     - name: Deploy to Vercel
       uses: amondnet/vercel-action@v25
