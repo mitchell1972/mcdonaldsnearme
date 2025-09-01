@@ -3,37 +3,25 @@ name: Deploy to Vercel
 on:
   push:
     branches: [ master ]
-  pull_request:
-    branches: [ master ]
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-
+      
     - name: Install pnpm
       run: npm install -g pnpm
-
-    - name: Setup Node.js with pnpm
-      uses: actions/setup-node@v4
-      with:
-        node-version: '18'
-        cache: 'pnpm'
-
-    - name: Install dependencies
-      run: pnpm install
-
-    - name: Build project
-      run: pnpm run build
-
-    - name: Deploy to Vercel
-      uses: amondnet/vercel-action@v25
-      with:
-        vercel-token: ${{ secrets.VERCEL_TOKEN }}
-        github-token: ${{ secrets.GITHUB_TOKEN }}
-        vercel-args: '--prod'
-        vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
-        vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+      
+    - name: Install Vercel CLI
+      run: pnpm install -g vercel@latest
+      
+    - name: Build and Deploy
+      run: |
+        pnpm install
+        pnpm run build
+        vercel --prod --token=${{ secrets.VERCEL_TOKEN }} --confirm
+      env:
+        VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
