@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://mcdonaldsnearme.store/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
+
+# Disallow unnecessary paths
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /static/
+Disallow: *.js$
+Disallow: *.css$
+Disallow: *.json$
