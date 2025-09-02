@@ -4,5 +4,6 @@
       "source": "/(.*)",
       "destination": "/index.html"
     }
-  ]
+  ],
+  "alias": ["mcdonaldsnearme.store", "www.mcdonaldsnearme.store"]
 }
