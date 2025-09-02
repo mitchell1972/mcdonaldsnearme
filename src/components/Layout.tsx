@@ -24,7 +24,7 @@ interface LayoutProps {
 export function Layout({ children, seo }: LayoutProps) {
   const {
     title = 'McDonald\'s Locations in London | Find Your Nearest Restaurant',
-    description = 'Find McDonald\'s restaurants near you in London. Search 285+ locations by postcode, area, or GPS. View opening hours, ratings, and get directions to your nearest McDonald\'s.',
+    description = 'Find McDonald\'s restaurants near me in London. Search 285+ locations by postcode, area, or GPS. View opening hours, ratings, and get directions to your nearest McDonald\'s.',
     canonicalUrl,
     ogTitle,
     ogDescription,

@@ -71,7 +71,7 @@ export function HomePage() {
 
   const seoData = {
     title: 'McDonald\'s Locations in London | Find Your Nearest Restaurant Directory',
-    description: 'Find McDonald\'s restaurants near you in London. Search 285+ locations by postcode, area, or GPS. View opening hours, ratings, photos, and get directions to your nearest McDonald\'s.',
+    description: 'Find McDonald\'s restaurants near me in London. Search 285+ locations by postcode, area, or GPS. View opening hours, ratings, photos, and get directions to your nearest McDonald\'s.',
     structuredData: {
       '@context': 'https://schema.org',
       '@type': 'WebSite',
@@ -152,7 +152,7 @@ export function HomePage() {
       <section className="py-12 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Find McDonald's Near You</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Find McDonald's Near Me</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Search by postcode, area, or use your current location to find the nearest McDonald's restaurants.
             </p>
