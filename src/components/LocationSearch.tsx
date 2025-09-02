@@ -1,6 +1,6 @@
 import React, { useState, useCallback, useEffect } from 'react'
 import { Search, MapPin, Star, Clock, Filter, X } from 'lucide-react'
-import { McDonaldsLocation, searchLocations, SearchParams, getCurrentLocation } from '@/lib/supabase'
+import { McDonaldsLocation, searchLocations, SearchParams, getCurrentLocation, formatDistance } from '@/lib/supabase'
 import { LoadingSpinner } from '@/components/ui/loading-spinner'
 
 interface LocationSearchProps {
@@ -296,7 +296,7 @@ function LocationCard({ location, onSelect }: LocationCardProps) {
                 {location.distance && (
                   <div className="flex items-center gap-1">
                     <MapPin className="h-4 w-4" />
-                    <span>{location.distance < 1000 ? `${Math.round(location.distance)}m` : `${(location.distance / 1000).toFixed(1)}km`}</span>
+                    <span>{formatDistance(location.distance)}</span>
                   </div>
                 )}
                 
