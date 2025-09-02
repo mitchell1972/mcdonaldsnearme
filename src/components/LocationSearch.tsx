@@ -47,10 +47,12 @@ export function LocationSearch({ onLocationSelect, initialQuery = '' }: Location
     setHasSearched(true)
     
     try {
+      // If there's a search query, let the searchLocations function handle geocoding
+      // Only pass user location if there's no search query (for "Nearby" searches)
       const searchParams: SearchParams = {
         searchQuery: searchQuery.trim() || undefined,
-        latitude: userLocation?.latitude,
-        longitude: userLocation?.longitude,
+        latitude: searchQuery.trim() ? undefined : userLocation?.latitude,
+        longitude: searchQuery.trim() ? undefined : userLocation?.longitude,
         radius: filters.radius,
         minRating: filters.minRating,
         openNow: filters.openNow,
