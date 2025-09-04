@@ -1,17 +1,42 @@
+# Robots.txt for McDonald's Near Me Directory
+# https://www.mcdonaldsnearme.co.uk
+
 User-agent: *
 Allow: /
-
-# Sitemap
-Sitemap: https://mcdonaldsnearme.store/sitemap.xml
-
-# Crawl-delay
-Crawl-delay: 1
-
-# Disallow unnecessary paths
 Disallow: /api/
 Disallow: /admin/
 Disallow: /_next/
-Disallow: /static/
-Disallow: *.js$
-Disallow: *.css$
-Disallow: *.json$
+Disallow: /private/
+
+# Allow search engine crawlers
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 0
+
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 0
+
+# Block bad bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+# Sitemap location
+Sitemap: https://www.mcdonaldsnearme.co.uk/sitemap.xml
