@@ -12,7 +12,7 @@
     --sidebar-accent: 240 4.8% 95.9%;
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
@@ -23,16 +23,55 @@
     --sidebar-accent: 240 3.7% 15.9%;
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  /* Ensure consistent focus styles for keyboard navigation */
+  *:focus-visible {
+    @apply outline-2 outline-offset-2 outline-red-600;
+  }
+
+  /* Remove default focus ring for mouse users */
+  *:focus:not(:focus-visible) {
+    outline: none;
   }
 }
 
+/* Skip navigation link */
+.skip-link {
+  @apply absolute -top-full left-4 z-[100] bg-red-600 text-white px-4 py-2 rounded-b-lg font-medium;
+  transition: top 0.2s ease;
+}
 
+.skip-link:focus {
+  @apply top-0;
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Screen reader only utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
 
 img {
   object-position: top;
-}
-
-.fixed {
-  position: fixed;
 }
